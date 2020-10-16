@@ -1,6 +1,7 @@
 
 resource "aws_security_group_rule" "my-rule" {
   type              = "ingress"
+  description       = "amything will do"
   cidr_blocks       = ["0.0.0.0/0"]
   to_port           = 80
   from_port         = 80
@@ -8,9 +9,10 @@ resource "aws_security_group_rule" "my-rule" {
   security_group_id = aws_db_security_group.my-group.id
 }
 
+#checkov:skip=CKV_AWS_2: "Ensure ALB protocol is HTTPS"
 resource "aws_alb_listener" "my-alb-listener" {
   port              = "80"
-  protocol          = "HTTP"
+  protocol          = "HTTPS"
   load_balancer_arn = ""
   default_action {
     type = "fixed-response"
@@ -25,8 +27,9 @@ resource "aws_alb_listener" "my-alb-listener" {
 
 resource "aws_db_security_group" "my-group" {
   name = "db"
+
   ingress {
-    cidr = "10.0.0.0/24"
+    cidr        = "10.0.0.0/24"
+    description = "Anything in here"
   }
 }
-

@@ -44,7 +44,7 @@ valid:
 	checkov -d . --external-checks-dir ../../checkov
 
 conftest: init plan convert
-	conftest test ./tfplan.json -p ./policies	
+	conftest test ./tfplan.json -p ./policies
 
 
 target:

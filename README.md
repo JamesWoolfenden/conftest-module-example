@@ -5,9 +5,12 @@ This repo contains early examples (im learning the REGO).
 This example demonstrates access to a module.
 
 Why?
-Most of the validation required will eventual target modules, rather than the resources themselves- that's in any real implementation.
+Most of the validation required will eventual target modules,
+ rather than the resources themselves,
+that's in any real implementation.
 
-One of great features of OPA/Conftest is that it works on the planned and evaluated values.
+One of great features of OPA/Conftest is that it works on the planned
+ and evaluated values.
 
 To Use this example you will need Conftest installed in your path:
 
@@ -23,7 +26,8 @@ make: *** [Makefile:47: conftest] Error 1
 
 ```
 
-This example raises a failure when you can retrieve the source of the module being used but it could be any value or test.
+This example raises a failure when you can retrieve the source of the
+module being used but it could be any value or test.
 
 See the REGO test file in the policies folder for the REGO rule.
 
