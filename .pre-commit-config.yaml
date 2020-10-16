@@ -48,8 +48,3 @@ repos:
         language_version: python3.8
       - id: tf2docs
         language_version: python3.8
-  - repo: https://github.com/anderseknert/pre-commit-opa
-    rev: v1.3.0
-    hooks:
-      - id: conftest-verify
-        args: ['tfplan.json', '--policy', 'policies']

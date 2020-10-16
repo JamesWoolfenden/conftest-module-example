@@ -25,11 +25,12 @@ resource "aws_alb_listener" "my-alb-listener" {
   }
 }
 
+
 resource "aws_db_security_group" "my-group" {
+  #checkov:skip=CKV_AWS_23: "Ensure every security groups rule has a description"
   name = "db"
 
   ingress {
-    cidr        = "10.0.0.0/24"
-    description = "Anything in here"
+    cidr = "10.0.0.0/24"
   }
 }
